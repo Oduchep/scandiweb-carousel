@@ -31,7 +31,7 @@ function App() {
 					</p>
 				</CarouselItem>
 				<CarouselItem>
-					<img src={image1} width="100%" />
+					<img src={image1} width="100%" height="100%" />
 				</CarouselItem>
 			</CarouselSlider>
 		</div>

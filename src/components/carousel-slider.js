@@ -1,16 +1,8 @@
 import React, { useState } from "react";
 import "./carousel-slider.css";
 
-export const CarouselItem = ({ children, width }) => {
-	const mainItemStyle = {
-		width: width,
-	};
-
-	return (
-		<div className="main-item" style={mainItemStyle}>
-			{children}
-		</div>
-	);
+export const CarouselItem = ({ children }) => {
+	return <div className="main-item">{children}</div>;
 };
 
 const CarouselSlider = ({ children }) => {
@@ -20,27 +12,25 @@ const CarouselSlider = ({ children }) => {
 		transform: `translateX(-${translateX * 100}%)`,
 	};
 
-	const updatetranslateX = (newTranslateX) => {
-		if (newTranslateX >= React.Children.count(children)) {
-			newTranslateX = 0;
-		} else if (newTranslateX < 0) {
-			newTranslateX = React.Children.count(children) - 1;
+	const updatetranslateX = (currentTranslateX) => {
+		if (currentTranslateX >= React.Children.count(children)) {
+			currentTranslateX = 0;
+		}
+		if (currentTranslateX < 0) {
+			currentTranslateX = React.Children.count(children) - 1;
 		}
 
-		setTranslateX(newTranslateX);
+		setTranslateX(currentTranslateX);
+		console.log(translateX);
 	};
 
 	return (
 		<div className="carousel-slider">
 			<div className="carousel-item" style={carourelItemStyle}>
 				{React.Children.map(children, (child) => {
-					return React.cloneElement(child, { width: "100%" });
+					return React.cloneElement(child);
 				})}
 			</div>
-
-			<button className="btn-scroll btn-scroll-left" onClick={() => updatetranslateX(translateX - 1)}>
-				<i className="arrow left"></i>
-			</button>
 
 			<div className="carousel-indicators">
 				{React.Children.map(children, (item, index) => {
@@ -51,6 +41,10 @@ const CarouselSlider = ({ children }) => {
 					);
 				})}
 			</div>
+
+			<button className="btn-scroll btn-scroll-left" onClick={() => updatetranslateX(translateX - 1)}>
+				<i className="arrow left"></i>
+			</button>
 
 			<button className="btn-scroll btn-scroll-right" onClick={() => updatetranslateX(translateX + 1)}>
 				<i className="arrow right"></i>
