@@ -49,3 +49,13 @@ These items or elements are without styling especially the images and videos the
 Say you want to change the background color, font size, width, height, etc, all you have to do is target the particular element and style it with _CSS_ or any _stying library_ you are currently using. (For more clarity, check my App.js and App.css)
 
 **There, you are all set!**
+
+###### Note:
+
+To start my application, you will need to run
+
+```
+    npm run serve
+```
+
+Local host is **1000**
