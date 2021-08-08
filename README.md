@@ -8,16 +8,23 @@ All you have to do is import the component `CarouselSlider` and it's child compo
 
 **Step 1**
 Clone this repository to your loacal machine by copying the URL and typing this code in your editor terminal or Git bash
-`git clone <add URL link here>`
+
+```
+git clone <add URL link here>
+```
 
 **Step 2**
 Import the CarouselSlider component wherever you want to use it and reference it with opening and closing tags like so
-`<CarouselSlider></CarouselSlider>`
+
+```
+<CarouselSlider></CarouselSlider>
+```
 
 **Step 3**
 Import the CarouselItem component as well and reference it with opening and closing tags within the CarouselSlider tag like so
 
-```<CarouselSlider>
+```
+    <CarouselSlider>
         <CarouselItem></CarouselItem>
     </CarouselSlider>
 ```
@@ -25,7 +32,8 @@ Import the CarouselItem component as well and reference it with opening and clos
 **Step 4**
 Add whatever HTML element and content you want to be displayed in your carousel
 
-```<CarouselSlider>
+```
+    <CarouselSlider>
         <CarouselItem>
             <p> Peter Pan lives in Wonderland</p>
         </CarouselItem>
