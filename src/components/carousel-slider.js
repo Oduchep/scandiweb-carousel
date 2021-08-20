@@ -7,6 +7,8 @@ export const CarouselItem = ({ children }) => {
 
 const CarouselSlider = ({ children }) => {
 	const [translateX, setTranslateX] = useState(0);
+	const [firstPosition, setFirstPosition] = useState(0);
+	const [secondPosition, setSecondPosition] = useState(0);
 
 	const carourelItemStyle = {
 		transform: `translateX(-${translateX * 100}%)`,
@@ -24,8 +26,30 @@ const CarouselSlider = ({ children }) => {
 		console.log(translateX);
 	};
 
+	const getPositionX = (event) => {
+		return event.type.includes("mouse") ? event.pageX : event.touches[0].clientX;
+	};
+
+	const touchStart = (event) => {
+		setFirstPosition(getPositionX(event));
+		// console.log(firstPosition);
+	};
+
+	const onSwipe = (event) => {
+		setSecondPosition(getPositionX(event));
+		if (firstPosition < secondPosition) {
+			console.log("it will go right");
+			updatetranslateX(translateX + 1);
+		}
+
+		if (firstPosition > secondPosition) {
+			console.log("it will go left");
+			updatetranslateX(translateX - 1);
+		}
+	};
+
 	return (
-		<div className="carousel-slider">
+		<div className="carousel-slider" onTouchStart={touchStart} onMouseDown={touchStart} onTouchEnd={onSwipe} onMouseUp={onSwipe}>
 			<div className="carousel-item" style={carourelItemStyle}>
 				{React.Children.map(children, (child) => {
 					return React.cloneElement(child);
