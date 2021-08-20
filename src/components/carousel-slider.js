@@ -31,7 +31,7 @@ const CarouselSlider = ({ children }) => {
 		return event.type.includes("mouse") ? event.pageX : event.touches[0].clientX;
 	};
 
-	const touchStart = (event) => {
+	const touchOn = (event) => {
 		setFirstPosition(getPositionX(event));
 		// console.log(firstPosition);
 	};
@@ -41,7 +41,7 @@ const CarouselSlider = ({ children }) => {
 		// console.log(secondPosition);
 	};
 
-	const onSwipe = () => {
+	const touchOff = () => {
 		if (firstPosition > secondPosition) {
 			console.log("it will go right");
 			updatetranslateX(translateX + 1);
@@ -56,12 +56,12 @@ const CarouselSlider = ({ children }) => {
 	return (
 		<div
 			className="carousel-slider"
-			onTouchStart={touchStart}
-			onMouseDown={touchStart}
+			onTouchStart={touchOn}
+			onMouseDown={touchOn}
 			onTouchMove={onMove}
 			onMouseMove={onMove}
-			onTouchEnd={onSwipe}
-			onMouseUp={onSwipe}>
+			onTouchEnd={touchOff}
+			onMouseUp={touchOff}>
 			<div className="carousel-item" style={carourelItemStyle}>
 				{React.Children.map(children, (child) => {
 					return React.cloneElement(child);

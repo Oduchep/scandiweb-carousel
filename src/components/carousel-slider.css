@@ -1,6 +1,7 @@
 .carousel-slider {
 	position: relative;
 	width: 100%;
+	margin: auto;
 	height: 60vh;
 	display: flex;
 	align-items: center;
@@ -80,7 +81,7 @@
 /* slider indicator styles */
 .carousel-indicators {
 	position: absolute;
-	top: 80%;
+	top: 90%;
 	width: 100vw;
 	display: flex;
 	justify-content: center;
@@ -104,6 +105,7 @@
 	background: rgb(155, 154, 154);
 }
 
+/* responsive styling */
 @media screen and (max-width: 768px) {
 	.btn-scroll {
 		width: 30px;

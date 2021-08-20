@@ -16,6 +16,7 @@ p {
 .carousel-slider {
 	position: relative;
 	width: 100%;
+	margin: auto;
 	height: 60vh;
 	display: flex;
 	align-items: center;
@@ -23,6 +24,7 @@ p {
 	box-shadow: -1px 1px 11px 1px rgba(105, 98, 98, 0.53);
 	-webkit-box-shadow: -1px 1px 11px 1px rgba(105, 98, 98, 0.53);
 	-moz-box-shadow: -1px 1px 11px 1px rgba(105, 98, 98, 0.53);
+	user-select: none;
 }
 
 .carousel-item {
@@ -30,6 +32,7 @@ p {
 	display: flex;
 	min-width: 100%;
 	max-width: 100%;
+	user-select: none;
 }
 
 .main-item {
@@ -40,6 +43,7 @@ p {
 	justify-content: center;
 	height: 60vh;
 	color: black;
+	user-select: none;
 }
 
 /* button styles */
@@ -92,7 +96,7 @@ p {
 /* slider indicator styles */
 .carousel-indicators {
 	position: absolute;
-	top: 80%;
+	top: 90%;
 	width: 100vw;
 	display: flex;
 	justify-content: center;
@@ -116,6 +120,7 @@ p {
 	background: rgb(155, 154, 154);
 }
 
+/* responsive styling */
 @media screen and (max-width: 768px) {
 	.btn-scroll {
 		width: 30px;
