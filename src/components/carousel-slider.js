@@ -9,6 +9,7 @@ const CarouselSlider = ({ children }) => {
 	const [translateX, setTranslateX] = useState(0);
 	const [firstPosition, setFirstPosition] = useState(0);
 	const [secondPosition, setSecondPosition] = useState(0);
+	// const [dragging, setDragging] = useState(false)
 
 	const carourelItemStyle = {
 		transform: `translateX(-${translateX * 100}%)`,
@@ -35,21 +36,32 @@ const CarouselSlider = ({ children }) => {
 		// console.log(firstPosition);
 	};
 
-	const onSwipe = (event) => {
+	const onMove = (event) => {
 		setSecondPosition(getPositionX(event));
-		if (firstPosition < secondPosition) {
+		// console.log(secondPosition);
+	};
+
+	const onSwipe = () => {
+		if (firstPosition > secondPosition) {
 			console.log("it will go right");
 			updatetranslateX(translateX + 1);
 		}
 
-		if (firstPosition > secondPosition) {
+		if (firstPosition < secondPosition) {
 			console.log("it will go left");
 			updatetranslateX(translateX - 1);
 		}
 	};
 
 	return (
-		<div className="carousel-slider" onTouchStart={touchStart} onMouseDown={touchStart} onTouchEnd={onSwipe} onMouseUp={onSwipe}>
+		<div
+			className="carousel-slider"
+			onTouchStart={touchStart}
+			onMouseDown={touchStart}
+			onTouchMove={onMove}
+			onMouseMove={onMove}
+			onTouchEnd={onSwipe}
+			onMouseUp={onSwipe}>
 			<div className="carousel-item" style={carourelItemStyle}>
 				{React.Children.map(children, (child) => {
 					return React.cloneElement(child);

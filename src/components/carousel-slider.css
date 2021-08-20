@@ -8,6 +8,7 @@
 	box-shadow: -1px 1px 11px 1px rgba(105, 98, 98, 0.53);
 	-webkit-box-shadow: -1px 1px 11px 1px rgba(105, 98, 98, 0.53);
 	-moz-box-shadow: -1px 1px 11px 1px rgba(105, 98, 98, 0.53);
+	user-select: none;
 }
 
 .carousel-item {
@@ -15,6 +16,7 @@
 	display: flex;
 	min-width: 100%;
 	max-width: 100%;
+	user-select: none;
 }
 
 .main-item {
@@ -25,6 +27,7 @@
 	justify-content: center;
 	height: 60vh;
 	color: black;
+	user-select: none;
 }
 
 /* button styles */
