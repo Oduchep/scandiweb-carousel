@@ -46,6 +46,14 @@ p {
 	user-select: none;
 }
 
+.main-item div {
+	width: 80%;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 /* button styles */
 .btn-scroll {
 	position: absolute;
@@ -136,6 +144,11 @@ p {
 	}
 	.right {
 		margin-right: 4px;
+	}
+
+	.main-item div {
+		width: 100%;
+		height: 100%;
 	}
 }
 
