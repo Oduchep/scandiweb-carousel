@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import "./carousel-slider.css";
 
 export const CarouselItem = ({ children }) => {
-	return <div className="main-item">{children}</div>;
+	return (
+		<div className="main-item">
+			<div>{children}</div>
+		</div>
+	);
 };
 
 const CarouselSlider = ({ children }) => {
