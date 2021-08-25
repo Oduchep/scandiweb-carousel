@@ -26,8 +26,7 @@ function App() {
 					<p>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et purus eros. Maecenas bibendum bibendum justo, ut lobortis nunc dapibus
 						id. Aenean sodales nisl porta risus gravida tincidunt. Integer semper, purus sit amet dictum commodo, tellus velit scelerisque purus, nec
-						tincidunt sem orci eget ante. Etiam a mauris cursus, pellentesque lacus in, ultrices erat. Maecenas faucibus, sem vitae tempus imperdiet,
-						lectus ante aliquet velit, sit amet egestas arcu metus ac tellus. Morbi vitae placerat sem, ut tristique nulla.
+						tincidunt sem orci eget ante.
 					</p>
 				</CarouselItem>
 				<CarouselItem>

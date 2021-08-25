@@ -130,6 +130,10 @@ p {
 
 /* responsive styling */
 @media screen and (max-width: 768px) {
+	.carousel-slider {
+		height: 40vh;
+	}
+
 	.btn-scroll {
 		width: 30px;
 		height: 30px;
